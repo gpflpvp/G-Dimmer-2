@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net9.0-windows10.0.17763.0</TargetFramework>
+				<TargetFramework>net9.0-windows</TargetFramework>
+		
+		<RootNamespace>G_Dimmer_2</RootNamespace>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWPF>true</UseWPF>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<ApplicationIcon>task_bar.ico</ApplicationIcon>
+		<FileVersion>1.0</FileVersion>
+		<Title>GDimmer</Title>
+		<Copyright>Copyright © 2025 Gerald Flores</Copyright>
+		<PackageIcon>app logo icon.png</PackageIcon>
+		<PackageLicenseFile>License.txt</PackageLicenseFile>
+		<!-- Add this line -->
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Resources\app_show.ico" />
+		<None Remove="Resources\disable.ico" />
+		<None Remove="Resources\enable.ico" />
+		<None Remove="Resources\exit.ico" />
+		<None Remove="Resources\preferences.ico" />
+		<None Remove="Resources\system_tray.ico" />
+		<None Remove="Resources\task_bar.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="task_bar.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Resources\enable.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Resources\app_show.ico" />
+		<EmbeddedResource Include="Resources\disable.ico" />
+		<EmbeddedResource Include="Resources\exit.ico" />
+		<EmbeddedResource Include="Resources\preferences.ico" />
+		<EmbeddedResource Include="Resources\system_tray.ico" />
+		<None Include="..\..\..\..\OneDrive\Desktop\icons\app logo icon.png">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\..\..\..\OneDrive\Desktop\icons\License.txt">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
+		<PackageReference Include="Extended.Wpf.Toolkit" Version="4.7.25104.5739" />
+		<Resource Include="Resources\task_bar.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Properties\Settings.Designer.cs">
+	    <DesignTimeSharedInput>True</DesignTimeSharedInput>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Settings.settings</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Properties\Settings.settings">
+	    <Generator>SettingsSingleFileGenerator</Generator>
+	    <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+	  </None>
+	</ItemGroup>
+
+</Project>
